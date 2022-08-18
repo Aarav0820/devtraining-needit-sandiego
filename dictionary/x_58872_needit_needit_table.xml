@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Needit Table" max_length="40" name="x_58872_needit_needit_table" sizeclass="3" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_other" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Request Type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="HR" sequence="0" value="hr"/>
+                <element inactive_on_update="false" label="Facilities" sequence="1" value="facilities"/>
+                <element inactive_on_update="false" label="Legal" sequence="2" value="legal"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Short Description" mandatory="true" max_length="40" name="u_string_1" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="legal1" label="Type options" mandatory="true" max_length="40" name="u_string_11" type="string" use_dependent_field="true">
+            <choice>
+                <element inactive_on_update="false" label="Legal 1" sequence="0" value="legal1"/>
+                <element inactive_on_update="false" label="Legal 2" sequence="1" value="legal2"/>
+                <element inactive_on_update="false" label="Human Resources 1" sequence="2" value="hr1"/>
+                <element inactive_on_update="false" label="Human Resources 2" sequence="3" value="hr2"/>
+                <element inactive_on_update="false" label="Facilities 1" sequence="4" value="facilities1"/>
+                <element inactive_on_update="false" label="Facilities 2" sequence="5" value="facilities2"/>
+                <element inactive_on_update="false" label="Other" sequence="6" value="other"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Description" mandatory="true" max_length="100" name="u_string_2" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Product" mandatory="true" max_length="40" name="u_string_3" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Name" mandatory="true" max_length="40" name="u_string_4" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="State" mandatory="true" max_length="40" name="u_string_5" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Open" sequence="0" value="draft"/>
+                <element inactive_on_update="false" label="Work in Progress" sequence="1" value="work in progress"/>
+                <element inactive_on_update="false" label="Closed Complete" sequence="2" value="closed complete"/>
+                <element inactive_on_update="false" label="Closed Incomplete" sequence="3" value="closed incomplete"/>
+                <element inactive_on_update="false" label="Closed Skipped" sequence="4" value="closed skipped"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" dependent="u_string_11" dependent_on_field="u_string_11" label="Type options" mandatory="true" max_length="40" name="u_string_6" type="string" use_dependent_field="true">
+            <choice/>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="legal" label="Request Type" mandatory="true" max_length="40" name="u_string_8" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Legal" sequence="0" value="legal"/>
+                <element inactive_on_update="false" label="HR" sequence="1" value="hr"/>
+                <element inactive_on_update="false" label="Facilities" sequence="2" value="facilities"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="What Needed" mandatory="true" max_length="40" name="u_what_needed" type="string" use_dependent_field="true"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" dependent="u_string_8" dependent_on_field="u_string_8" label="What Needed" max_length="40" name="what_needed" type="string" use_dependent_field="true">
+            <choice>
+                <element inactive_on_update="false" label="none" sequence="0" value="none"/>
+                <element inactive_on_update="false" label="Choice 2" sequence="1" value="Choice 2"/>
+                <element inactive_on_update="false" label="Choice 3" sequence="2" value="Choice 3"/>
+            </choice>
+        </element>
+    </element>
+</database>
